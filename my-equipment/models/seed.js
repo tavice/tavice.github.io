@@ -6,7 +6,8 @@
     purchase: "3\/9\/22",
     isDriveable: true,
     location: 'shop',
-    currentUser: 'Bob'
+    currentUser: 'Bob',
+    img: "https://picsum.photos/200/300"
    },
    {
     year: 2014,
@@ -15,7 +16,8 @@
     purchase: "3\/9\/22",
     isDriveable: true,
     location: 'shop',
-    currentUser: 'Bob'
+    currentUser: 'Bob',
+    img: "https://picsum.photos/200/300"
    },
    {
     year: 2014,
@@ -24,7 +26,113 @@
     purchase: "3\/9\/22",
     isDriveable: false,
     location: 'onsite',
-    currentUser: 'Max'
+    currentUser: 'Max',
+    img: "https://picsum.photos/200/300",
+    
+
+    
+   },
+   {
+    year: 2014,
+    description: "Snorkel Scissorlift 10', 30",
+    model: "S3010E",
+    purchase: "3\/9\/22",
+    isDriveable: false,
+    location: 'onsite',
+    currentUser: 'Max',
+    img: "https://picsum.photos/200/300",
+    
+
+    
+   },
+   {
+    year: 2014,
+    description: "Snorkel Scissorlift 10', 30",
+    model: "S3010E",
+    purchase: "3\/9\/22",
+    isDriveable: false,
+    location: 'onsite',
+    currentUser: 'Max',
+    img: "https://picsum.photos/200/300",
+    
+
+    
+   },
+   {
+    year: 2014,
+    description: "Snorkel Scissorlift 10', 30",
+    model: "S3010E",
+    purchase: "3\/9\/22",
+    isDriveable: false,
+    location: 'onsite',
+    currentUser: 'Max',
+    img: "https://picsum.photos/200/300",
+    
+
+    
+   },
+   {
+    year: 2014,
+    description: "Snorkel Scissorlift 10', 30",
+    model: "S3010E",
+    purchase: "3\/9\/22",
+    isDriveable: false,
+    location: 'onsite',
+    currentUser: 'Max',
+    img: "https://picsum.photos/200/300",
+    
+
+    
+   },
+   {
+    year: 2014,
+    description: "Snorkel Scissorlift 10', 30",
+    model: "S3010E",
+    purchase: "3\/9\/22",
+    isDriveable: false,
+    location: 'onsite',
+    currentUser: 'Max',
+    img: "https://picsum.photos/200/300",
+    
+
+    
+   },
+   {
+    year: 2014,
+    description: "Snorkel Scissorlift 10', 30",
+    model: "S3010E",
+    purchase: "3\/9\/22",
+    isDriveable: false,
+    location: 'onsite',
+    currentUser: 'Max',
+    img: "https://picsum.photos/200/300",
+    
+
+    
+   },
+   {
+    year: 2014,
+    description: "Snorkel Scissorlift 10', 30",
+    model: "S3010E",
+    purchase: "3\/9\/22",
+    isDriveable: false,
+    location: 'onsite',
+    currentUser: 'Max',
+    img: "https://picsum.photos/200/300",
+    
+
+    
+   },
+   {
+    year: 2014,
+    description: "Snorkel Scissorlift 10', 30",
+    model: "S3010E",
+    purchase: "3\/9\/22",
+    isDriveable: false,
+    location: 'onsite',
+    currentUser: 'Max',
+    img: "https://picsum.photos/200/300",
+    
 
     
    },
@@ -35,6 +143,7 @@
     purchase: "3\/9\/22",
     isDriveable: false,
     location: 'onsite',
-    currentUser: 'Max'
+    currentUser: 'Max',
+    img: "https://picsum.photos/200/300"
     
    }]

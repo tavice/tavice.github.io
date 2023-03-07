@@ -8,6 +8,7 @@ const equipmentSchema = new mongoose.Schema({
     isDriveable: {type: Boolean, require: true},
     location: String,
     currentUser: {type: String, require: true},
+    img: {type: String, require: true},
 })
 
 //fruitSchema singular represents a single fruit

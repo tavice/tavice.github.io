@@ -4,15 +4,15 @@ const Equipment = require('../models/equipment.js')
 
 
 // Seed
-// const equipmentSeed = require('../models/seed.js');
+const equipmentSeed = require('../models/seed.js');
 
-// router.get('/seed', (req, res) => {
-// 	Equipment.deleteMany({}, (error, allEquipment) => {});
+router.get('/seed', (req, res) => {
+	Equipment.deleteMany({}, (error, allEquipment) => {});
 
-// 	Equipment.create(equipmentSeed, (error, data) => {
-// 		res.redirect('/equipment');
-// 	});
-// });
+	Equipment.create(equipmentSeed, (error, data) => {
+		res.redirect('/equipment');
+	});
+});
 
 
 // Routes / Controllers

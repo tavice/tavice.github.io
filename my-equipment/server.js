@@ -41,6 +41,7 @@ app.use(express.json());
 app.use(methodOverride('_method'));
 app.use('/equipment', equipmentController)
 //app.use('/users', usersController)
+app.use(express.static('public'));
 
 
 

@@ -1,0 +1,18 @@
+
+.container {
+    min-height: 100vh;
+    flex: auto;
+}
+.gallery-item {
+    margin-bottom: 20px;
+}
+.gallery-item img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform .2s;
+}
+.gallery-item img:hover {
+    transform: scale(1.1);
+}
