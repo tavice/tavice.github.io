@@ -1,0 +1,141 @@
+body{
+    background-color: aquamarine;
+    background-image: url(img/background-pixelArt.png);
+    font-family: 'Audiowide', cursive;
+}
+
+h1{
+    color: rgba(1,228,255,255);
+}
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;        
+}
+.hide{
+    display: none;
+}
+.car{
+    width: 50px;
+    height: 100px;
+    background-color: rgb(29, 26, 26);
+    position: absolute;
+    bottom: 120px;
+    background-image: url(img/CarPhotos/car1.png);
+    background-size: cover;
+}
+.GameArea{
+    width: 400px;
+    height: 100%;
+    background-color: rgb(29, 26, 26);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    overflow: hidden;
+    border-left: 10px dashed white;
+    border-right:10px dashed white;
+}
+.lines{
+    width: 10px;
+    height: 100px;
+    background: white;
+    position: absolute;
+    margin-left: 195px;
+}
+.CarGame{
+    background-image: url(img/background.jpg);
+    background-size: cover;
+
+}
+.otherCar{
+    width: 50px;
+    height: 100px;
+    background-color: blue;
+    background-size: cover;
+    position: absolute;
+    bottom: 120px;
+}
+
+
+
+
+#carOne{
+   
+    background-image: url(img/CarPhotos/car1_reverse.png);
+    background-size: cover;
+    position: absolute;
+   
+}
+#carTwo{
+  
+    background-image: url(img/CarPhotos/car2_reverse.png);
+    background-size: cover;
+    position: absolute;
+    
+}
+#carThree{
+   
+    background-image: url(img/CarPhotos/car3_reverse.png);
+    background-size: cover;
+    position: absolute;
+   
+}
+.Score{
+    position: absolute;
+    top: 15px;
+    left: 50px;
+    text-align: center;
+    padding-top: 23px;
+    font-size: 30px;
+    line-height: 20px;
+    background-color: rgba(253, 123, 131, 0.9);
+    color: white;
+    width: 400px;
+    height: 100px;
+    border: 2px solid rgba(1,228,255,255);
+    border-radius: 23px;
+}
+.StartScreen{
+    position: absolute;
+    background-color: rgba(253, 123, 131, 0.9);
+    color: white;
+    z-index: 1;
+    margin-top: 210px;
+    margin-left:360px;
+    text-align: center;
+    font-size: 30px;
+    width: 50%;
+    height: 40%;
+    cursor: pointer;
+    border: 2px solid rgba(1,228,255,255);
+    border-radius: 23px;
+
+}
+button{
+    padding: 10px;
+    text-align: center;
+    font-family: 'Audiowide', cursive;
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: 120px;
+    left: 180px;
+    border: 2px solid rgba(1,228,255,255);
+    border-radius: 23px;
+}
+
+button:hover{
+    background-color: #dfa702;
+    color: black;
+    cursor: pointer;
+}
+
+#here{
+    color: black;
+}
