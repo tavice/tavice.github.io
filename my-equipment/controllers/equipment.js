@@ -44,6 +44,15 @@ router.get('/', (req, res) => {
 //Edit
 
 //Show
+//Show
+router.get('/:id', (req, res) => {
+    Equipment.findById(req.params.id, (err, foundEquipment) => {
+        res.render('show.ejs', {
+            equipment: foundEquipment
+        })
+
+    })
+})
 
 
 module.exports = router
