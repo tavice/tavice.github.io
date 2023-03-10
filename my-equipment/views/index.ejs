@@ -13,7 +13,7 @@
 			<div class="col-md-4">
 				<div class="gallery-item">
 					<a href="/equipment/<%= oneEquipment._id %>">
-                        <img src=<%= oneEquipment.img %> alt="Image_id <%= oneEquipment._id %>">
+                        <img src="data:image/<%=oneEquipment.img.contentType%>;base64,<%=oneEquipment.img.data.toString('base64')%>">
                     </a>
 				</div>
 			</div>
@@ -22,5 +22,9 @@
 
     <!-- ============ FOOTER============ -->
     <%- include ('./partials/footer.ejs') %>
+
+
+
+
 
       

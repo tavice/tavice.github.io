@@ -10,7 +10,8 @@
       
               <div class="row gy-4 justify-content-center">
                 <div class="col-lg-4">
-                  <img src=<%= equipment.img %> class="img-fluid" alt="">
+                    <img src="data:<%= equipment.img.contentType %>;base64,<%= equipment.img.data.toString('base64') %>" alt="<%= equipment.description %>" class="img-fluid">
+           
                 </div>
                 <div class="col-lg-5 content">
                   <h1><%= equipment.description %></h1>
@@ -20,6 +21,8 @@
                       <ul>
                         <li><i class="bi bi-chevron-right"></i> <strong>Model:</strong> <span><%= equipment.model %></span></li>
                         <li><i class="bi bi-chevron-right"></i> <strong>Purchase Date:</strong> <span><%= equipment.purchase %></span></li>
+                        <li><i class="bi bi-chevron-right"></i> <strong>Location:</strong> <span><%= equipment.location %></span></li>
+                        <li><i class="bi bi-chevron-right"></i> <strong>Current User:</strong> <span><%= equipment.currentUser %></span></li>
                         
                       </ul>
                     </div>
@@ -27,10 +30,18 @@
                   </div>
                   
                 </div>
-              </div>
+            </div>
+            
+            <div>
+              <a href="/equipment"><button class="btn btn-primary float-right update">Update</button></a>
+              <a href="/equipment/<%=equipment._id %>/edit"><button class="btn btn-danger float-right ml-2 delete">Delete</button></a>
+            </div>
       
             </div>
+           
+          
           </section> 
 
-              <!-- ============ FOOTER============ -->
-      <%- include ('./partials/footer.ejs') %>
+         
+<!-- ============ FOOTER============ -->
+     <%- include ('./partials/footer.ejs') %>

@@ -8,10 +8,17 @@ const equipmentSchema = new mongoose.Schema({
     isDriveable: {type: Boolean, require: true},
     location: String,
     currentUser: {type: String, require: true},
-    img: {type: String, require: true},
+    img: {
+
+        data: {type: Buffer},
+        contentType: String
+    }   
 })
 
-//fruitSchema singular represents a single fruit
 
 const Equipment = mongoose.model('Equipment', equipmentSchema)
 module.exports = Equipment;
+
+
+// The buffers module provides a way of handling streams of binary data: data field of type Buffer to store the binary image data, and a contentType field of type String to store the MIME type of the image.
+

@@ -4,7 +4,7 @@ const app = express();
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const equipmentController = require('./controllers/equipment.js');
-//const usersController = require('./controllers/users.js');
+const imageController = require('./controllers/image.js');
 const session = require('express-session');
 require('dotenv').config();
 
@@ -40,7 +40,8 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 app.use(methodOverride('_method'));
 app.use('/equipment', equipmentController)
-//app.use('/users', usersController)
+
+app.use('/image', imageController)
 app.use(express.static('public'));
 
 
