@@ -1,18 +1,18 @@
 const mongoose = require('mongoose');
 
 const equipmentSchema = new mongoose.Schema({
-    year: Number,
+    year: {
+        type: Number,
+        min: 1900, // minimum value
+        max: new Date().getFullYear() // maximum value
+    },
     description: {type: String, require: true},
     model: {type: String, require: true},
     purchase: String,
     isDriveable: {type: Boolean, require: true},
     location: String,
     currentUser: {type: String, require: true},
-    img: {
-
-        data: {type: Buffer},
-        contentType: String
-    }   
+    typeEquipment: {type: String, require: true},
 })
 
 

@@ -7,17 +7,17 @@
     isDriveable: true,
     location: 'shop',
     currentUser: 'Bob',
-    img: "/uploads/gr-20_alt2.jpeg"
+    img: "/uploads/genie_personal_lift.jpeg"
    },
    {
     year: 2014,
-    description: "Genie Personnel Lift 20" ,
-    model: "GR-20",
+    description: "Pick Up Truck" ,
+    model: "Ford F-150",
     purchase: "3\/9\/22",
     isDriveable: true,
     location: 'shop',
     currentUser: 'Bob',
-    img: "/uploads/gr-20_alt2.jpeg"
+    img: "/uploads/pickup_truck.png"
    },
    {
     year: 2014,
@@ -27,98 +27,36 @@
     isDriveable: false,
     location: 'onsite',
     currentUser: 'Max',
-    img: "/uploads/snorkel-s3010e-indoor-maintenance-application.jpeg",
+    img: "/uploads/scissor_lift.jpeg",
     
 
     
    },
    {
     year: 2014,
-    description: "Snorkel Scissorlift 10', 30",
+    description: "Mini Excavator",
     model: "S3010E",
     purchase: "3\/9\/22",
     isDriveable: false,
     location: 'onsite',
     currentUser: 'Max',
-    img: "/uploads/snorkel-s3010e-indoor-maintenance-application.jpeg",
+    img: "/uploads/mini_excavator.webp",
     
 
     
    },
    {
     year: 2014,
-    description: "Snorkel Scissorlift 10', 30",
+    description: "Large Excavator",
     model: "S3010E",
     purchase: "3\/9\/22",
     isDriveable: false,
     location: 'onsite',
     currentUser: 'Max',
-    img: "/uploads/snorkel-s3010e-indoor-maintenance-application.jpeg",
-    
-
-    
-   },
-   {
-    year: 2014,
-    description: "Snorkel Scissorlift 10', 30",
-    model: "S3010E",
-    purchase: "3\/9\/22",
-    isDriveable: false,
-    location: 'onsite',
-    currentUser: 'Max',
-    img: "/uploads/snorkel-s3010e-indoor-maintenance-application.jpeg",
-    
-
-    
-   },
-   {
-    year: 2014,
-    description: "Snorkel Scissorlift 10', 30",
-    model: "S3010E",
-    purchase: "3\/9\/22",
-    isDriveable: false,
-    location: 'onsite',
-    currentUser: 'Max',
-    img: "/uploads/snorkel-s3010e-indoor-maintenance-application.jpeg",
-    
-
-    
-   },
-   {
-    year: 2014,
-    description: "Snorkel Scissorlift 10', 30",
-    model: "S3010E",
-    purchase: "3\/9\/22",
-    isDriveable: false,
-    location: 'onsite',
-    currentUser: 'Max',
-    img: "/uploads/snorkel-s3010e-indoor-maintenance-application.jpeg",
-    
-
-    
-   },
-   {
-    year: 2014,
-    description: "Snorkel Scissorlift 10', 30",
-    model: "S3010E",
-    purchase: "3\/9\/22",
-    isDriveable: false,
-    location: 'onsite',
-    currentUser: 'Max',
-    img: "/uploads/snorkel-s3010e-indoor-maintenance-application.jpeg",
+    img: "/uploads/excavator_large.png",
     
 
     
    },
   
-   {
-    year: 2016,
-    description: "Genie Personnel Lift 20",
-    model: "GR-20",
-    purchase: "3\/9\/22",
-    isDriveable: false,
-    location: 'onsite',
-    currentUser: 'Max',
-    img: "/uploads/gr-20_alt2.jpeg"
-    
-   }]
+ ]

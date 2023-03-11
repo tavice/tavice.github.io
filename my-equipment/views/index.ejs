@@ -9,23 +9,30 @@
       <div class="container">
 		<h1 class="text-center mb-5 main-title">List of Equipment</h1>
 		<div class="row ">
-            <% equipmentList.forEach(oneEquipment => { %>
+            <% equipment.forEach(oneEquipment => { %>
                 
-			<div class="col-md-4">
+			<div class="col-md-4 mb-4">
 				<div class="gallery-item">
 					<a href="/equipment/<%= oneEquipment._id %>">
-                        <a href="/equipment/<%= oneEquipment._id %>">
-                            <% if (oneEquipment.img && oneEquipment.img.data) { %>
-                                <img src="data:<%= oneEquipment.img.contentType %>;base64,<%= oneEquipment.img.data.buffer.toString('base64') %>">
-                            <% } else { %>
-                                <img src="/uploads/gr-20_alt2.jpeg">
-                            <% } %>
-                        </a>
+                        <% if (oneEquipment.typeEquipment === "pick up truck"){  %>
+                            <img src="/uploads/pickup_truck.png" alt="pickup_truck" class="img-fluid">
+                            <% } else if (oneEquipment.typeEquipment === "mini excavator" ){   %>
+                            <img src="/uploads/mini_excavator.webp" alt="mini_excavator" class="img-fluid">
+                            <% } else if (oneEquipment.typeEquipment === "excavator"){   %>
+                            <img src="/uploads/excavator_large.png" alt="excavator" class="img-fluid">
+                            <% } else if (oneEquipment.typeEquipment === "scissor lift"){   %>
+                            <img src="/uploads/scissor_lift2.jpeg" alt="scissor_lift" class="img-fluid">
+                            <% } else  {   %>
+                            <img src=<%= oneEquipment.typeEquipment %> alt="other type">
+                            <% }   %>   
                     </a>
 				</div>
 			</div>
             <% }) %>    
         </div>
+
+
+        
 
     <!-- ============ FOOTER============ -->
     <%- include ('./partials/footer.ejs') %>

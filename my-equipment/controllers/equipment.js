@@ -4,47 +4,47 @@ const Equipment = require('../models/equipment.js');
 
 
 
-//file upload
+//Image upload - Strech goal will come back to it later having issue with img.data it doesn't convert to a string but is saved in the database
 //https://www.geeksforgeeks.org/upload-and-retrieve-image-on-mongodb-using-mongoose/
 //determines the directory where uploaded files will be stored, and a filename function that determines the name of the file on disk.
 // we want to use the multer middleware and the use of the single method to extract the uploaded file from the request.
 
-const multer = require('multer'); //for file upload https://expressjs.com/en/resources/middleware/multer.html
-const path = require('path');
-const fs = require('fs');
+// const multer = require('multer'); //for file upload https://expressjs.com/en/resources/middleware/multer.html
+// const path = require('path');
+// const fs = require('fs');
 
 
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, "public/uploads")
-    },
-    filename: (req, file, cb) => {
-        const ext = file.mimetype.split("/")[1];
-        cb(null, `${file.fieldname}-${Date.now()}.${ext}`);
-      },
-    
-});
+// const storage = multer.diskStorage({
+//     destination: (req, file, cb) => {
+//         cb(null, "public/uploads")
+//     },
+//     filename: (req, file, cb) => {
+//         const ext = file.mimetype.split("/")[1];
+//         cb(null, `${file.fieldname}-${Date.now()}.${ext}`);
+//       },
+
+//});
 
 //use fileFilter function to the multer configuration object to only accept files of a certain type
-const fileFilter = function (req, file, cb) {
-    if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/)) {
-        return cb(new Error('Only image files are allowed!'));
-    }
-    cb(null, true);
-};
+// const fileFilter = function (req, file, cb) {
+//     if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/)) {
+//         return cb(new Error('Only image files are allowed!'));
+//     }
+//     cb(null, true);
+// };
 
 
-const upload = multer({ 
-    storage: storage, 
-    fileFilter: fileFilter,
-});
+// const upload = multer({ 
+//     storage: storage, 
+//     fileFilter: fileFilter,
+// });
 
 
 
 
 
 // Seed
-// const equipmentSeed = require('../models/seed.js');
+//const equipmentSeed = require('../models/seed.js');
 
 // router.get('/seed', (req, res) => {
 // 	Equipment.deleteMany({}, (error, allEquipment) => {});
@@ -60,19 +60,16 @@ const upload = multer({
 
 //Routes - Induces
 //Index
-router.get('/', (req, res) => {
-    Equipment.find({img: {$exists: true}}, (error, allEquipment) => { //only return equipment objects that have the img property set, so that you don't get errors when trying to display equipment objects without images.
-        if (error) {
-            console.log(error);
-            res.status(500).send('An error occurred', error);
+router.get('/', function (req, res) {
+    Equipment.find({}, function (err, allEquipment) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render('index.ejs', { equipment: allEquipment });
         }
-        else {
-           // res.send(allEquipment)
-        res.render('index.ejs', {
-            equipment: allEquipment,
-        });
-    }});
+    });
 });
+
 
 
 //New
@@ -81,22 +78,56 @@ router.get('/new', (req, res) => {
 });
 
 //Delete
+router.delete('/:id', (req, res) => {
+    Equipment.findByIdAndDelete(req.params.id, (err, deletedEquipment) =>{
+        if(err){
+            console.log(error)
+            res.send(error)
+        } else {
+            //redirect to the index page i fthe delete is successful
+            console.log(deletedEquipment)
+            res.redirect('/equipment')
+        }
+    })
+})
 
 //Update
+
+router.put('/:id', (req, res) => {
+ 
+    if (req.body.isDriveable === 'on') {
+        req.body.isDriveable = true;
+    } else {
+        req.body.isDriveable = false;
+    }
+ 
+   Equipment.findByIdAndUpdate(req.params.id, req.body, {new: true,}, (err, updatedEquipment) => {
+    
+    
+        if(err){
+            console.log(err)
+            res.send(err)
+        } else {
+            console.log(updatedEquipment)
+            res.redirect(`/equipment/${updatedEquipment._id}`) //to redirect to the updated equipment
+        }
+   })
+})
 
 //Create
 
 
-router.post('/', upload.single('img'), (req, res, next) => {
+router.post('/', (req, res) => {
+
 
     // Check if a file was uploaded
-    if (!req.file) {
-        res.status(400).send('No file uploaded');
-        console.log(upload);
-        return;
-    }
+    // if (!req.file) {
+    //     res.status(400).send('No file uploaded');
+    //     console.log(upload);
+    //     return;
+    // }
 
-    console.log(req.file);
+    // console.log(req.file);
 
     // req.body contains the form data other than the file, making sure we change the value of our form to a boolean
     if (req.body.isDriveable === 'on') {
@@ -114,14 +145,10 @@ router.post('/', upload.single('img'), (req, res, next) => {
         isDriveable: req.body.isDriveable,
         location: req.body.location,
         currentUser: req.body.currentUser,
-        img: {
-            data: req.file.buffer,
-        
-            contentType: req.file.mimetype,
-          },
+        typeEquipment: req.body.typeEquipment
     };
 
-    Equipment.create( newEquipment, (error, createdEquipment) => {
+    Equipment.create(newEquipment, (error, createdEquipment) => {
         if (error) {
             console.log(error);
             res.send(error);
@@ -129,10 +156,9 @@ router.post('/', upload.single('img'), (req, res, next) => {
             //createdEquipment.save()
 
             console.log(createdEquipment);
-            console.log(createdEquipment.img.data.buffer)
+            // console.log(createdEquipment.img.data.buffer)
 
 
-            
             res.redirect('/equipment');
         }
     });
@@ -140,6 +166,20 @@ router.post('/', upload.single('img'), (req, res, next) => {
 
 
 //Edit
+
+router.get('/:id/edit',  (req, res)=>{
+    Equipment.findById(req.params.id, (err, foundEquipment)=>{ //find the fruit
+       if(err){
+        console.log(err)
+        res.send(err)
+       } else {
+        res.render('edit.ejs', {
+            equipment: foundEquipment
+        })
+       }
+    })
+})
+
 
 
 //Show

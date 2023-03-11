@@ -17,6 +17,8 @@ h1{
 /* Galley in index Page */
 .gallery-item {
     margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
 }
 .gallery-item img {
     max-width: 100%;
@@ -29,6 +31,7 @@ h1{
     transform: scale(1.1);
 }
 
+  
 
 
 /* Nav Bar */
