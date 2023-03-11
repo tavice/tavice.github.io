@@ -116,8 +116,9 @@ router.post('/', upload.single('img'), (req, res, next) => {
         currentUser: req.body.currentUser,
         img: {
             data: req.file.buffer,
-            contentType: req.file.mimetype
-        }
+        
+            contentType: req.file.mimetype,
+          },
     };
 
     Equipment.create( newEquipment, (error, createdEquipment) => {
@@ -125,8 +126,13 @@ router.post('/', upload.single('img'), (req, res, next) => {
             console.log(error);
             res.send(error);
         } else {
-            createdEquipment.save()
+            //createdEquipment.save()
+
             console.log(createdEquipment);
+            console.log(createdEquipment.img.data.buffer)
+
+
+            
             res.redirect('/equipment');
         }
     });

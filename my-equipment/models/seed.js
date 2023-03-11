@@ -7,7 +7,7 @@
     isDriveable: true,
     location: 'shop',
     currentUser: 'Bob',
-    img: "https://picsum.photos/200/300"
+    img: "/uploads/gr-20_alt2.jpeg"
    },
    {
     year: 2014,
@@ -17,7 +17,7 @@
     isDriveable: true,
     location: 'shop',
     currentUser: 'Bob',
-    img: "https://picsum.photos/200/300"
+    img: "/uploads/gr-20_alt2.jpeg"
    },
    {
     year: 2014,
@@ -27,7 +27,7 @@
     isDriveable: false,
     location: 'onsite',
     currentUser: 'Max',
-    img: "https://picsum.photos/200/300",
+    img: "/uploads/snorkel-s3010e-indoor-maintenance-application.jpeg",
     
 
     
@@ -40,7 +40,7 @@
     isDriveable: false,
     location: 'onsite',
     currentUser: 'Max',
-    img: "https://picsum.photos/200/300",
+    img: "/uploads/snorkel-s3010e-indoor-maintenance-application.jpeg",
     
 
     
@@ -53,7 +53,7 @@
     isDriveable: false,
     location: 'onsite',
     currentUser: 'Max',
-    img: "https://picsum.photos/200/300",
+    img: "/uploads/snorkel-s3010e-indoor-maintenance-application.jpeg",
     
 
     
@@ -66,7 +66,7 @@
     isDriveable: false,
     location: 'onsite',
     currentUser: 'Max',
-    img: "https://picsum.photos/200/300",
+    img: "/uploads/snorkel-s3010e-indoor-maintenance-application.jpeg",
     
 
     
@@ -79,7 +79,7 @@
     isDriveable: false,
     location: 'onsite',
     currentUser: 'Max',
-    img: "https://picsum.photos/200/300",
+    img: "/uploads/snorkel-s3010e-indoor-maintenance-application.jpeg",
     
 
     
@@ -92,7 +92,7 @@
     isDriveable: false,
     location: 'onsite',
     currentUser: 'Max',
-    img: "https://picsum.photos/200/300",
+    img: "/uploads/snorkel-s3010e-indoor-maintenance-application.jpeg",
     
 
     
@@ -105,37 +105,12 @@
     isDriveable: false,
     location: 'onsite',
     currentUser: 'Max',
-    img: "https://picsum.photos/200/300",
+    img: "/uploads/snorkel-s3010e-indoor-maintenance-application.jpeg",
     
 
     
    },
-   {
-    year: 2014,
-    description: "Snorkel Scissorlift 10', 30",
-    model: "S3010E",
-    purchase: "3\/9\/22",
-    isDriveable: false,
-    location: 'onsite',
-    currentUser: 'Max',
-    img: "https://picsum.photos/200/300",
-    
-
-    
-   },
-   {
-    year: 2014,
-    description: "Snorkel Scissorlift 10', 30",
-    model: "S3010E",
-    purchase: "3\/9\/22",
-    isDriveable: false,
-    location: 'onsite',
-    currentUser: 'Max',
-    img: "https://picsum.photos/200/300",
-    
-
-    
-   },
+  
    {
     year: 2016,
     description: "Genie Personnel Lift 20",
@@ -144,6 +119,6 @@
     isDriveable: false,
     location: 'onsite',
     currentUser: 'Max',
-    img: "https://picsum.photos/200/300"
+    img: "/uploads/gr-20_alt2.jpeg"
     
    }]

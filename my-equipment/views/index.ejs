@@ -9,11 +9,18 @@
       <div class="container">
 		<h1 class="text-center mb-5 main-title">List of Equipment</h1>
 		<div class="row ">
-            <% equipment.forEach(oneEquipment => { %>
+            <% equipmentList.forEach(oneEquipment => { %>
+                
 			<div class="col-md-4">
 				<div class="gallery-item">
 					<a href="/equipment/<%= oneEquipment._id %>">
-                        <img src="data:image/<%=oneEquipment.img.contentType%>;base64,<%=oneEquipment.img.data.toString('base64')%>">
+                        <a href="/equipment/<%= oneEquipment._id %>">
+                            <% if (oneEquipment.img && oneEquipment.img.data) { %>
+                                <img src="data:<%= oneEquipment.img.contentType %>;base64,<%= oneEquipment.img.data.buffer.toString('base64') %>">
+                            <% } else { %>
+                                <img src="/uploads/gr-20_alt2.jpeg">
+                            <% } %>
+                        </a>
                     </a>
 				</div>
 			</div>

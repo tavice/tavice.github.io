@@ -10,7 +10,14 @@
       
               <div class="row gy-4 justify-content-center">
                 <div class="col-lg-4">
-                    <img src="data:<%= equipment.img.contentType %>;base64,<%= equipment.img.data.toString('base64') %>" alt="<%= equipment.description %>" class="img-fluid">
+                    <a href="/equipment/<%= equipment._id %>">
+                        <!--having issues with multer so having dummy image if it doesn't upload properly-->
+                        <% if (equipment.img && equipment.img.data) { %>
+                            <img src="data:<%= equipment.img.contentType %>;base64,<%= equipment.img.data.buffer.toString('base64') %>">
+                        <% } else { %>
+                            <img src="/uploads/gr-20_alt2.jpeg">
+                        <% } %>
+                    </a>
            
                 </div>
                 <div class="col-lg-5 content">
