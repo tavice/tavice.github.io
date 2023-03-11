@@ -7,13 +7,16 @@
  
 
       <div class="container">
-		<h1 class="text-center mb-5 main-title">List of Equipment</h1>
+		<h1 class="text-center mb-5 main-title">List of Equipment and Vehicles</h1>
+        <h2>Filter Equipment</h2>
+  
+  <input class="form-control" id="myInput" type="text" placeholder="Type Equipment type to find it">
 		<div class="row ">
             <% equipment.forEach(oneEquipment => { %>
                 
-			<div class="col-md-4 mb-4">
-				<div class="gallery-item">
-					<a href="/equipment/<%= oneEquipment._id %>">
+			<div class="col-md-4 mb-4" class="<%= oneEquipment.typeEquipment %>">
+				<div class="gallery-item" id="equipmentList">
+					<a href="/equipment/<%= oneEquipment._id %>" >
                         <% if (oneEquipment.typeEquipment === "pick up truck"){  %>
                             <img src="/uploads/pickup_truck.png" alt="pickup_truck" class="img-fluid">
                             <% } else if (oneEquipment.typeEquipment === "mini excavator" ){   %>
@@ -30,6 +33,19 @@
 			</div>
             <% }) %>    
         </div>
+
+<!-- Filter to find equipment faster https://www.w3schools.com/bootstrap/bootstrap_filters.asp-->
+        <script>
+            $(document).ready(function(){
+              $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myDIV *").filter(function() {
+                  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+              });
+            });
+            </script>
+                
 
 
         
